@@ -145,7 +145,7 @@ div.splash h3{
   }
 }
 
-div.cta form{
+div.screen form{
   position:relative;
   display:grid;
   grid-template-columns: 1fr;
@@ -160,14 +160,14 @@ div.cta form{
 
   }
 }
-div.cta input{
+div.screen input{
   padding: 15px 10px;
   font-size:1.2rem;
   width:100%;
   
   background-color: transparent;
 }
-div.cta input ~ span{
+div.screen input ~ span{
   position:absolute;
   left: 12px;
   top:19px;
@@ -176,16 +176,16 @@ div.cta input ~ span{
   transition: all 0.15s ease;
   pointer-events: none;
 }
-div.cta input:focus{
+div.screen input:focus{
   padding-top: 19px;
   padding-bottom: 11px;
   color: #fff;
 }
-div.cta input:focus ~ span{
+div.screen input:focus ~ span{
   top: 4px;
   font-size:.8rem;
 }
-div.cta button{
+div.screen button{
   font-size: 1rem;
   padding: 10px 16px;
   background-color: #e50914;
@@ -194,7 +194,7 @@ div.cta button{
   border:6px;
 }
 @media screen and (min-width:550px) {
-  div.cta button{
+  div.screen button{
       font-size:1.625rem;
       padding: 12px 26px;
       border-radius: 6px;
@@ -375,10 +375,7 @@ footer select{
   border-radius: 3px;
   width: 90px;
 }
-feConvolveMatrix div.select{
-  display:inline-block;
-  margin-right: 10px;
-}
+
 @media screen and (min-width:550px) {
 footer div.select{
       margin-right: 30px;
