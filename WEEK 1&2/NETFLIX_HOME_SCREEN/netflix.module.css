@@ -435,12 +435,12 @@ footer div.col {
 }
 
 footer div.col a {
-  display: block;
+  /* display: inline-block; */
   margin-bottom: 10px;
   font-size: 13px;
 }
 
 footer div.col a u {
-  text-decoration: underline;
+  /* text-decoration: underline; */
   color: #777;
 }
