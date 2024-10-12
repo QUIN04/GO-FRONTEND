@@ -1,0 +1,142 @@
+#Challenge
+
+There will be two arrays of integers. Determine all integers that satisfy the following two conditions:
+
+The elements of the first array are all factors of the integer being considered
+The integer being considered is a factor of all elements of the second array
+These numbers are referred to as being between the two arrays. Determine how many such numbers exist.
+
+Example
+
+
+There are two numbers between the arrays:  and .
+, ,  and  for the first value.
+,  and ,  for the second value. Return .
+
+Function Description
+
+Complete the getTotalX function in the editor below. It should return the number of integers that are betwen the sets.
+
+getTotalX has the following parameter(s):
+
+int a[n]: an array of integers
+int b[m]: an array of integers
+Returns
+
+int: the number of integers that are between the sets
+Input Format
+
+The first line contains two space-separated integers,  and , the number of elements in arrays  and .
+The second line contains  distinct space-separated integers  where .
+The third line contains  distinct space-separated integers  where .
+
+Constraints
+
+Sample Input
+
+2 3
+2 4
+16 32 96
+Sample Output
+
+3
+Explanation
+
+2 and 4 divide evenly into 4, 8, 12 and 16.
+4, 8 and 16 divide evenly into 16, 32, 96.
+
+4, 8 and 16 are the only three numbers for which each element of a is a factor and each is a factor of all elements of b.
+
+Language
+TypeScript
+More
+2324252226272829303132333435363738394041424344454647
+function gcd(x: number, y: number): number {
+    while (y !== 0) {
+        const temp = y;
+        y = x % y;
+        x = temp;
+    }
+    return x;
+}
+
+function lcm(x: number, y: number): number {
+…}
+
+// Sample Input
+const a = [3, 4];
+const b = [24, 48];
+console.log(getTotalX(a, b)); // Output: 2
+
+Line: 47 Col: 1
+
+Test against custom input
+Wrong Answer :(
+
+1/2 test cases failed
+
+
+Sample Test case 0
+
+Sample Test case 1
+Compiler Message
+Wrong Answer
+Input (stdin)
+2 3
+2 4
+16 32 96
+Your Output (stdout)
+2
+Expected Output
+3
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Solution
+
+function gcd(x: number, y: number): number {
+    while (y !== 0) {
+        const temp = y;
+        y = x % y;
+        x = temp;
+    }
+    return x;
+}
+
+function lcm(x: number, y: number): number {
+    return (x * y) / gcd(x, y);
+}
+
+function getTotalX(a: number[], b: number[]): number {
+
+    let lcmA = a[0];
+    for (let i = 1; i < a.length; i++) {
+        lcmA = lcm(lcmA, a[i]);
+    }
+
+    let gcdB = b[0];
+    for (let i = 1; i < b.length; i++) {
+        gcdB = gcd(gcdB, b[i]);
+    }
+
+    let count = 0;
+    for (let multiple = lcmA; multiple <= gcdB; multiple += lcmA) {
+        let isFactor = true;
+        for (let j = 0; j < b.length; j++) {
+            if (b[j] % multiple !== 0) {
+                isFactor = false;
+                break;
+            }
+        }
+        if (isFactor) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+// Sample Input
+const a = [3, 4];
+const b = [24, 48];
+console.log(getTotalX(a, b)); // Output: 2
