@@ -1,1 +1,1 @@
-Hackerranking every work-day til November 30th with JS.
+Hackerranking every work-day with JS.
