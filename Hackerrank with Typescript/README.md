@@ -1,1 +1,3 @@
 Working with Hackerrank .....
+
+#WEEKS 7,8 & 9
