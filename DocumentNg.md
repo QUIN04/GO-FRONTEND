@@ -13,3 +13,7 @@
   *ng g c pages/home
 - Next of was to ensure routing accross the different pages set-up with the previous step, I realised that tha app.routes.ts is very import here: https://www.youtube.com/watch?v=dT3f0KTdNyA
   
+22/10/2024
+!!SKIPPED FOR 11 DAYS, FIGHTING THE STRONGEST BUGS, I'VE FACED SINCE GENESIS😂😂, OMG QUINUELLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
+- Ensured proper routing of the 4 portions of the screen view, Also installed Bootstrap and added it to the package.json file
+  *npm install bootstrap
